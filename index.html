@@ -24,7 +24,7 @@
 <body>
     <main>
         <div id="app" class="container">
-            <select @click="onSelectedChange(selected)" v-model="selected" class="form-select"
+            <select @change="onSelectedChange(selected)" v-model="selected" class="form-select"
                 aria-label="Default select example">
                 <option>Filtra per generi musicali</option>
                 <option value="Rock">Rock</option>

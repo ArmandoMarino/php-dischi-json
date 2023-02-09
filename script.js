@@ -1,6 +1,6 @@
 console.log('vue ok', Vue);
 const { createApp } = Vue;
-let apiUri = 'http://localhost/php-dischi-json/discs.php';
+const apiUri = 'http://localhost/php-dischi-json/discs.php';
 const app = createApp({
     data() {
         return {
@@ -11,8 +11,10 @@ const app = createApp({
     methods: {
         onSelectedChange(selected) {
             this.selected = selected;
-            if (this.selected) apiUri += `?genres=${this.selected}`;
-            axios.get(apiUri).then(res => {
+            let url = apiUri;
+            if (this.selected) url += `?genres=${this.selected}`;
+
+            axios.get(url).then(res => {
                 this.discs = res.data;
             })
         }
