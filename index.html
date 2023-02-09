@@ -24,14 +24,18 @@
 <body>
     <main>
         <div id="app" class="container">
-            <select @change="onSelectedChange(selected)" v-model="selected" class="form-select"
-                aria-label="Default select example">
-                <option>Filtra per generi musicali</option>
-                <option value="Rock">Rock</option>
-                <option value="Pop">Pop</option>
-                <option value="Jazz">Jazz</option>
-                <option value="Metal">Metal</option>
-            </select>
+            <form @submit.prevent="onSelectedChange" action="#" class="d-flex justify-content-center m-3">
+                <label class="w-25" for="genres">Filtra per generi musicali</label>
+                <select class="w-25" name="genres" @change="onSelectedChange(selected)" v-model="selected"
+                    class="form-select">
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Metal">Metal</option>
+                </select>
+                <a class="btn btn-secondary" href="http://localhost/php-dischi-json/">Reset</a>
+            </form>
+
             <div class="row g-4">
                 <div v-for="(disc, i) in discs" class="col-12 col-md-6 col-lg-4">
                     <div class="my-card p-3 text-center">
