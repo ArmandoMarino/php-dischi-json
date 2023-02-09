@@ -24,10 +24,14 @@
 <body>
     <main>
         <div id="app" class="container">
-            <div class="row">
-                <div v-for="(movie, i) in movies" class="col-3">
-                    <figure><img class="img-fluid" :src="movie.poster" alt=""></figure>
-                    <h5>{{movie.title}}</h5>
+            <div class="row g-4">
+                <div v-for="(movie, i) in movies" class="col-4">
+                    <div class="my-card p-3 text-center">
+                        <figure><img class="img-fluid" :src="movie.poster" alt=""></figure>
+                        <h5>{{movie.title}}</h5>
+                        <p>{{ movie.author }}</p>
+                        <h5>{{ movie.year }}</h5>
+                    </div>
                 </div>
             </div>
         </div>
