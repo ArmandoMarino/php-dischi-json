@@ -74,7 +74,7 @@ $discs = [
 ];
 
 
-
+// LOGICA
 $result = $discs;
 
 $search = $_GET['search'] ?? '';
