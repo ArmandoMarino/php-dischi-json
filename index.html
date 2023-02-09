@@ -24,6 +24,13 @@
 <body>
     <main>
         <div id="app" class="container">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Filtra per generi musicali</option>
+                <option value="1">Rock</option>
+                <option value="2">Pop</option>
+                <option value="3">Jazz</option>
+                <option value="3">Metal</option>
+            </select>
             <div class="row g-4">
                 <div v-for="(movie, i) in movies" class="col-12 col-md-6 col-lg-4">
                     <div class="my-card p-3 text-center">

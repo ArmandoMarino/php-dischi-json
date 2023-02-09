@@ -79,7 +79,24 @@ $result = $discs;
 
 $search = $_GET['search'] ?? '';
 
+$search_genres = $_GET['genres'] ?? '';
 
+// FILTRO PER CHIAMATA PER GENERI
+if(!empty($search_genres)){
+$searched_term = strtolower($search_genres);
+    
+$filtered_result =[];
+    
+foreach ($discs as $disc){
+    $genre = strtolower($disc['genre']);
+    if(str_contains($genre, $searched_term)) $filtered_result[] = $disc;
+}
+    
+$result = $filtered_result;
+}
+
+
+// FILTRO PER CHIAMATA PER TITOLO
 if(!empty($search)){
 $searched_term = strtolower($search);
 
