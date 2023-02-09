@@ -25,7 +25,9 @@
     <main>
         <div id="app" class="container">
             <form @submit.prevent="onSelectedChange" action="#" class="d-flex justify-content-center m-3">
-                <label class="w-25" for="genres">Filtra per generi musicali</label>
+                <label class="w-25" for="genres">
+                    <h4>Filtra per generi musicali:</h4>
+                </label>
                 <select class="w-25" name="genres" @change="onSelectedChange(selected)" v-model="selected"
                     class="form-select">
                     <option value="Rock">Rock</option>
@@ -33,7 +35,7 @@
                     <option value="Jazz">Jazz</option>
                     <option value="Metal">Metal</option>
                 </select>
-                <a class="btn btn-secondary" href="http://localhost/php-dischi-json/">Reset</a>
+                <a class="btn btn-secondary ms-2" href="http://localhost/php-dischi-json/">Reset</a>
             </form>
 
             <div class="row g-4">
